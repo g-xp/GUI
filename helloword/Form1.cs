@@ -13,11 +13,23 @@ namespace helloword
 {
     public partial class Form1 : Form
     {
+        private Queue<int> dataQueue1 = new Queue<int>(20);
+        private Queue<int> dataQueue2 = new Queue<int>(20);
         public Form1()
         {
             InitializeComponent();
+            InitQueue();
+            this.timer1.Start();
         }
 
+        private  void InitQueue()
+        {
+            for (int i = 0;i<20;i++)
+            {
+                dataQueue1.Enqueue(0);
+                dataQueue2.Enqueue(0);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBox5.Items.AddRange(System.IO.Ports.SerialPort.GetPortNames());
@@ -165,6 +177,10 @@ namespace helloword
                             str = str.Remove(0, m + 1);
 
                             save_str[i] = str1 +" " + str2;
+                            dataQueue1.Dequeue();
+                            dataQueue2.Dequeue();
+                            dataQueue1.Enqueue(Convert.ToInt32(str1));
+                            dataQueue2.Enqueue(Convert.ToInt32(str2));
                             if(i==4)
                             {
                                 i = 0;
@@ -258,6 +274,18 @@ namespace helloword
                 comboBox4.Enabled = true;
                 comboBox5.Enabled = true;
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.chart1.Series["Series1"].Points.Clear();
+            this.chart2.Series["Series1"].Points.Clear();
+            for (int i = 0;i < 20;i++)
+            {
+                this.chart1.Series["Series1"].Points.AddY(dataQueue1.ElementAt(i));
+                this.chart2.Series["Series1"].Points.AddY(dataQueue2.ElementAt(i));
+            }
+           
         }
     }
 }
