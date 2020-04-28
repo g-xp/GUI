@@ -272,6 +272,7 @@
             chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Green;
             chartArea1.AxisY.Maximum = 120D;
             chartArea1.AxisY.Minimum = 90D;
+            chartArea1.AxisY.Title = "电压(v)";
             chartArea1.BackColor = System.Drawing.Color.Black;
             chartArea1.Name = "ChartArea1";
             this.chart2.ChartAreas.Add(chartArea1);
@@ -282,7 +283,7 @@
             resources.ApplyResources(this.chart2, "chart2");
             this.chart2.Name = "chart2";
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Color = System.Drawing.Color.Blue;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
@@ -298,6 +299,7 @@
             chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Green;
             chartArea2.AxisY.Maximum = 120D;
             chartArea2.AxisY.Minimum = 90D;
+            chartArea2.AxisY.Title = "电压(v)";
             chartArea2.BackColor = System.Drawing.Color.Black;
             chartArea2.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea2);
@@ -307,7 +309,7 @@
             resources.ApplyResources(this.chart1, "chart1");
             this.chart1.Name = "chart1";
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Color = System.Drawing.Color.Red;
             series2.Legend = "Legend1";
             series2.Name = "Series1";

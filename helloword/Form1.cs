@@ -121,12 +121,18 @@ namespace helloword
         {
             try
             {
+                /*
                 //首先判断串口是否开启
                 if (serialPort1.IsOpen)
                 {
                     //串口处于开启状态，将发送区文本发送
                     serialPort1.Write("00000001");
-                }
+                }*/
+                this.Hide();
+                FileForm fileForm = new FileForm();
+                fileForm.ShowDialog();
+                fileForm.Dispose();
+                this.Show();
             }
             catch (Exception ex)
             {
@@ -183,13 +189,13 @@ namespace helloword
                             dataQueue2.Enqueue(Convert.ToInt32(str2));
                             if(i==4)
                             {
-                                i = 0;
+                                i = -1;
                                 string fname = "C:\\Users\\18800\\Desktop\\" + 
                                         DateTime.Now.ToLongDateString()+ ".txt";
                                 StreamWriter sw = new StreamWriter(fname,true);
                                 for (int j=0;j<5;j++)
                                 {
-                                    sw.WriteLine(save_str[i] + Convert.ToString(j));
+                                    sw.WriteLine(save_str[j]);
                                 }
                                 sw.Close();
                             }

@@ -760,13 +760,13 @@
     <value>0</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 44</value>
+    <value>317, 42</value>
   </data>
   <data name="button3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 48</value>
+    <value>115, 48</value>
   </data>
   <data name="button3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -799,7 +799,7 @@
     <value>1</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>操作1</value>
+    <value>打开数据</value>
   </data>
   <data name="&gt;&gt;button2.Name" xml:space="preserve">
     <value>button2</value>
